@@ -10,5 +10,6 @@
         SO THAT I can view my favorite songs.
     - I want to be able to add music to the master database.
         SO THAT those songs can be chosen as favorites.
-        
-    
+
+## Technologies
+    - NPM lodash
