@@ -2,12 +2,57 @@ const router = require('express').Router();
 const { Media } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+const SpotifyWebApi = require('spotify-web-api-node');
+const withToken = require('../../utils/spotToken');
+
+const spotifyApi = new SpotifyWebApi(withToken._credentials);
+
+router.get('/', withAuth, async (req, res) => {
+  console.log('\n\nsearching for music\n\n');
+
+      console.log(
+      spotifyApi.searchTracks('Lady Marmalade')
+  .then(function(data) {
+    console.log('Here is the name of the first search result: ', JSON.stringify(data.body.tracks.items[0].name));
+    console.log('Here is the URL for the first search result: ', JSON.stringify(data.body.tracks.items[0].external_urls.spotify));
+    console.log('Here is the ID for the first search result: ', JSON.stringify(data.body.tracks.items[0].id));
+    console.log('Here is the first artist listed for the first search result: ', JSON.stringify(data.body.tracks.items[0].artists[0].name));
+    console.log('Here is the album name for the first search result: ', JSON.stringify(data.body.tracks.items[0].album.name), "\n\n---------------------\n");
+    // console.log(data.body.tracks.items.map(ele => ele.name));
+
+    songResults = data.body.tracks.items.map(ele => ele.name);
+
+    artistResults = data.body.tracks.items.map(ele => ele.artists.map(ele => ele.name));
+
+    console.log(songResults.map((e, i) => [e, artistResults[i]]));
+
+    console.log("\n", 
+      data.body.tracks.items.forEach(element => {
+        console.log("\n\n", element.name, ",\nby artist(s): ", element.artists
+          .forEach(element => {
+          console.log(element.name)
+        }
+        ));
+      }), "\n\n"
+    );
+    // console.log('Here is all the data for the first search result: ', JSON.stringify(data.body.tracks.items[0]));
+    console.log("Here I am")
+
+  }, function(err) {
+    console.error(err);
+  })
+    );
+
+});
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newMedia = await Media.create({
       ...req.body,
       user_id: req.session.user_id,
     });
+
+
 
     res.status(200).json(newMedia);
   } catch (err) {

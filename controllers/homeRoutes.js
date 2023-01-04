@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Media, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// spotifyApi.setAccessToken(withToken);
+
 router.get('/', async (req, res) => {
   try {
     // Get all media and JOIN with user data
@@ -14,7 +16,9 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    console.log('this is our homepageroute');
+
+
+    // console.log("\n\n", withToken._credentials, "\n\n");
     router.get('/profile', withAuth, async (req, res) => {
       try {
         // Find the logged in user based on the session ID
@@ -25,7 +29,9 @@ router.get('/', async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        console.log("\n\n user data is",user,"\n")
+        console.log("\n\n user data is",user,"\n");
+
+
 
         res.render('profile', {
           ...user,
