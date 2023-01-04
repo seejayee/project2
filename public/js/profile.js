@@ -1,14 +1,13 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
+    const lyrics = document.querySelector('#media-lyrics').value.trim();
+    const albums = document.querySelector('#media-albums').value.trim();
   
-    if (name && needed_funding && description) {
-      const response = await fetch(`/api/projects`, {
+    if (lyrics && albums) {
+      const response = await fetch(`/api/media`, {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ lyrics, albums, artist }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -39,10 +38,10 @@ const newFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-project-form')
+    .querySelector('.new-media-form')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
+    .querySelector('.media-list')
+    // .addEventListener('click', delButtonHandler);
   
