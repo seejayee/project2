@@ -1,38 +1,49 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-  
-    const lyrics = document.querySelector('#media-lyrics').value.trim();
-    const albums = document.querySelector('#media-albums').value.trim();
-  
-    if (lyrics && albums) {
+    
+    const title = document.querySelector('#media-title').value.trim();
+    
+    if (title) {
       const response = await fetch(`/api/media`, {
-        method: 'POST',
-        body: JSON.stringify({ lyrics, albums, artist }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        method: 'GET',
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create project');
+        alert('Failed to get media');
       }
     }
+
+    // if (title) {
+    //   const response = await fetch(`/api/media`, {
+    //     method: 'POST',
+    //     body: JSON.stringify({ title }),
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //   });
+  
+    //   if (response.ok) {
+    //     document.location.replace('/profile');
+    //   } else {
+    //     alert('Failed to create media');
+    //   }
+    // }
   };
   
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`/api/media/${id}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete project');
+        alert('Failed to delete media');
       }
     }
   };
