@@ -2,20 +2,21 @@ const router = require('express').Router();
 const { Media } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// This utilizes the spotify-web-api-node package, and accompanying ID, Secret, and Token assignment
 const SpotifyWebApi = require('spotify-web-api-node');
 const withToken = require('../../utils/spotToken');
-
 const spotifyApi = new SpotifyWebApi(withToken._credentials);
 
 router.get('/', withAuth, async (req, res) => {
   console.log('\n\nsearching for music\n\n');
 
+      // These console.log functions are various ways to access useful information via the spotify-web-api-node package.
       console.log(
-      spotifyApi.searchTracks('Lady Marmalade')
+      spotifyApi.searchTracks('Come Together')
   .then(function(data) {
-    console.log('Here is the name of the first search result: ', JSON.stringify(data.body.tracks.items[0].name));
+    console.log('Here is the track name of the first search result: ', JSON.stringify(data.body.tracks.items[0].name));
     console.log('Here is the URL for the first search result: ', JSON.stringify(data.body.tracks.items[0].external_urls.spotify));
-    console.log('Here is the ID for the first search result: ', JSON.stringify(data.body.tracks.items[0].id));
+    console.log('Here is the Spotify ID for the first search result: ', JSON.stringify(data.body.tracks.items[0].id));
     console.log('Here is the first artist listed for the first search result: ', JSON.stringify(data.body.tracks.items[0].artists[0].name));
     console.log('Here is the album name for the first search result: ', JSON.stringify(data.body.tracks.items[0].album.name), "\n\n---------------------\n");
     // console.log(data.body.tracks.items.map(ele => ele.name));

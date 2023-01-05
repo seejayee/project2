@@ -3,6 +3,8 @@ const newFormHandler = async (event) => {
     
     const title = document.querySelector('#media-title').value.trim();
     
+
+    // GET method to try to get a search function for Spotify music in the controllers/api/mediaRoutes.js file
     if (title) {
       const response = await fetch(`/api/media`, {
         method: 'GET',
@@ -14,6 +16,8 @@ const newFormHandler = async (event) => {
         alert('Failed to get media');
       }
     }
+
+    // This below section is commented out to try and get the GET fetch above to work.
 
     // if (title) {
     //   const response = await fetch(`/api/media`, {
