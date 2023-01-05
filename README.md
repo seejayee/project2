@@ -12,4 +12,4 @@
         SO THAT those songs can be chosen as favorites.
 
 ## Technologies
-    - NPM lodash
+    [spotify-web-api-node](https://www.npmjs.com/package/spotify-web-api-node)
