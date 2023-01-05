@@ -2,8 +2,6 @@ const router = require('express').Router();
 const { Media, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// spotifyApi.setAccessToken(withToken);
-
 router.get('/', async (req, res) => {
   try {
     // Get all media and JOIN with user data

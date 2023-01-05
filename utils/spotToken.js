@@ -1,3 +1,5 @@
+// This file handles spotify-web-api-node ID, Secret, and Access Token generation
+
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const spotifyApi = new SpotifyWebApi({
