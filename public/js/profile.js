@@ -6,12 +6,12 @@ const newFormHandler = async (event) => {
 
     // GET method to try to get a search function for Spotify music in the controllers/api/mediaRoutes.js file
     if (title) {
-      const response = await fetch(`/api/media`, {
+      const response = await fetch(`/api/media/songs/${title}`, {
         method: 'GET',
       });
 
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace(`/api/media/songs/${title}`);
       } else {
         alert('Failed to get media');
       }
