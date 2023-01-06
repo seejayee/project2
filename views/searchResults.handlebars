@@ -1,0 +1,11 @@
+<p>These are the search results</p>
+<div class="posts"></div>
+{{#each data.body.tracks.items as |item|}}
+<ul>{{item.name}}</ul>
+<ul>{{item.external_urls.spotify}}</ul>
+{{#each item.artists as |artist|}}
+<ul>--{{artist.name}}</ul>
+{{/each}}
+<btn>Save to my Favorites</btn>
+{{/each}}
+<script src="./js/searchResults.js"></script>
