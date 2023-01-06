@@ -14,7 +14,7 @@ router.get('/songs/:title', withAuth, async (req, res) => {
 
   spotifyApi.searchTracks(req.params.title).then(
     function (data) {
-      console.log(data);
+      console.log(data.body.tracks.items[0]);
       res.render('searchResults', {
         data
       })
