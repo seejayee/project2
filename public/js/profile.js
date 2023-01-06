@@ -1,62 +1,42 @@
 const newFormHandler = async (event) => {
-    event.preventDefault();
-    
-    const title = document.querySelector('#media-title').value.trim();
-    
+  event.preventDefault();
 
-    // GET method to try to get a search function for Spotify music in the controllers/api/mediaRoutes.js file
-    if (title) {
-      const response = await fetch(`/api/media/songs/${title}`, {
-        method: 'GET',
-      });
+  const title = document.querySelector('#media-title').value.trim();
 
-      if (response.ok) {
-        document.location.replace(`/api/media/songs/${title}`);
-      } else {
-        alert('Failed to get media');
-      }
+  // GET method to try to get a search function for Spotify music in the homeRoutes.js file
+  if (title) {
+    const response = await fetch(`/songs/${title}`, {
+      method: 'GET',
+    });
+
+    if (response.ok) {
+      document.location.replace(`/songs/${title}`);
+    } else {
+      alert('Failed to get media');
     }
+  }
+};
 
-    // This below section is commented out to try and get the GET fetch above to work.
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
 
-    // if (title) {
-    //   const response = await fetch(`/api/media`, {
-    //     method: 'POST',
-    //     body: JSON.stringify({ title }),
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //   });
-  
-    //   if (response.ok) {
-    //     document.location.replace('/profile');
-    //   } else {
-    //     alert('Failed to create media');
-    //   }
-    // }
-  };
-  
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/media/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to delete media');
-      }
+    const response = await fetch(`/api/media/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete media');
     }
-  };
-  
-  document
-    .querySelector('.new-media-form')
-    .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.media-list')
-    // .addEventListener('click', delButtonHandler);
-  
+  }
+};
+
+document
+  .querySelector('.new-media-form')
+  .addEventListener('submit', newFormHandler);
+
+document
+  .querySelector('.media-list')
+  .addEventListener('click', delButtonHandler);

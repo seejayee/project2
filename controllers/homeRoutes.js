@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { Media, User } = require('../models');
 const withAuth = require('../utils/auth');
+// This utilizes the spotify-web-api-node package, and accompanying ID, Secret, and Token assignment
+const SpotifyWebApi = require('spotify-web-api-node');
+const withToken = require('../utils/spotToken');
+const spotifyApi = new SpotifyWebApi(withToken._credentials);
 
 router.get('/', async (req, res) => {
   try {
@@ -14,7 +18,19 @@ router.get('/', async (req, res) => {
       ],
     });
 
-
+router.get('/songs/:title', withAuth, async (req, res) => {
+  spotifyApi.searchTracks(req.params.title).then(
+    function (data) {
+      res.render('searchResults', {
+        data,
+      });
+      return;
+    },
+    function (err) {
+      console.error(err);
+    }
+  );
+});
 
     // console.log("\n\n", withToken._credentials, "\n\n");
     router.get('/profile', withAuth, async (req, res) => {
