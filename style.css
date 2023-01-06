@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+height: 6em;
+background-color: rgb(183, 181, 181);
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+padding: 1em 0.3em 0em;
+}
+
+
+.rightNav{
+    display: flex;
+    gap: 1em;
+}
+
+.leftRightNav{
+    display: flex;
+    gap: 1em;
+}
+
+main{
+    min-height: 50em;
+    background-color: rgb(41, 41, 41);
+} */
