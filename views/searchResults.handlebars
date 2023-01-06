@@ -1,16 +1,18 @@
 <p>These are the search results</p>
-<div class="posts"></div>
+<div class="posts new-media-fav"></div>
 {{#each data.body.tracks.items as |item|}}
-<ul>Track Name: {{item.name}}</ul>
-<ul>Album artwork URL: {{item.album.images.[1].url}}</ul>
-<ul>Spotify URL: {{item.external_urls.spotify}}</ul>
-<ul>Duration in milliseconds: {{item.duration_ms}}</ul>
-<ul>Popularity rating: {{item.popularity}}</ul>
-<p>Artists:</p>
-{{#each item.artists as |artist|}}
-<ul>--{{artist.name}}</ul>
-{{/each}}
-<btn>Save to my Favorites</btn>
-<p>------</p>
-{{/each}}
+<form class="form new-media-fav">
+    <ul>Track Name: {{item.name}}</ul>
+    <ul>Album artwork URL: {{item.album.images.[1].url}}</ul>
+    <ul>Spotify URL: {{item.external_urls.spotify}}</ul>
+    <ul>Duration in milliseconds: {{item.duration_ms}}</ul>
+    <ul>Popularity rating: {{item.popularity}}</ul>
+    <p>Artists:</p>
+    {{#each item.artists as |artist|}}
+    <ul>--{{artist.name}}</ul>
+    {{/each}}
+    <button class="btn btn-sm" data-id="{{item.id}}">Save to my Favorites</button>
+    <p>------</p>
+    {{/each}}
+</form>
 <script src="./js/searchResults.js"></script>
