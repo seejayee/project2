@@ -16,6 +16,7 @@
       <div class="items-center flex justify-between">
         <h1 class="text-2xl tracking-wider text-white">Mixtape Generator</h1>
         <div class="flex items-center">
+                    {{#if logged_in}}
           <div class="hidden mdlrg:flex">
             <input
               id=""
@@ -34,7 +35,7 @@
           >
             <a href="#" class="active:text-stone-600">About</a>
             <a href="#" class="active:text-stone-600">Favorites</a>
-                    {{#if logged_in}}
+
         <a href="/profile">Profile</a> |
         <button class="no-button" id="logout">Logout</button>
         {{else}}
@@ -49,7 +50,7 @@
       class="h-48 bg-gradient-to-b from-emerald-900 via-stone-900 to-stone-900"
     ></footer>
       {{#if logged_in}}
-  <script src="../public/js/logout.js"></script>
+  <script src="./js/logout.js"></script>
   {{/if}}
   </body>
 </html>
