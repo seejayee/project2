@@ -1,4 +1,5 @@
 const newFavHandler = async (event) => {
+  console.log("newFavhandler called");
   event.preventDefault();
 
   const title = document.querySelector('#media-title').value.trim();
