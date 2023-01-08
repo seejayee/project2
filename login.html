@@ -7,7 +7,7 @@
       content="upgrade-insecure-requests"
     />
     <title>Mixtape Generator</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="./public/css/main.css" />
   </head>
   <body class="bg-stone-900">
     <nav
@@ -43,8 +43,40 @@
         </div>
       </div>
     </nav>
-    <main class="container h-128 mx-auto p-6 mb-3 border-2 border-red-300">
-      <div class="flex h-96 border-2 border-white"
+    <main class="container text-white h-96 mx-auto p-6 mb-3">
+      <form class="form login-form">
+        <div class="form-group">
+          <label for="email-login">email:</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">password:</label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">login</button>
+        </div>
+      </form>
+      <div class="col-md-6">
+        <h2>Signup</h2>
+        <form class="form signup-form">
+          <div class="form-group">
+            <label for="name-signup">name:</label>
+            <input class="form-input" type="text" id="name-signup" />
+          </div>
+          <div class="form-group">
+            <label for="email-signup">email:</label>
+            <input class="form-input" type="text" id="email-signup" />
+          </div>
+          <div class="form-group">
+            <label for="password-signup">password:</label>
+            <input class="form-input" type="password" id="password-signup" />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">signup</button>
+          </div>
+        </form>
+      </div>
     </main>
     <footer
       class="h-48 bg-gradient-to-b from-emerald-900 via-stone-900 to-stone-900"
