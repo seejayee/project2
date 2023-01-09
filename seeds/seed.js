@@ -14,7 +14,15 @@ const seedDatabase = async () => {
   });
 
   await Media.bulkCreate(mediaData, {
-    fields: [`title`, 'albums', 'artURL', 'spotURL', 'duration', 'rating', 'user_id'],
+    fields: [
+      `title`,
+      'albums',
+      'artURL',
+      'spotURL',
+      'duration',
+      'rating',
+      'user_id',
+    ],
   });
 
   await Artist.bulkCreate(artistData, {
