@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Lady Marmalade - Single Edit",
+    "albums": "Lady Marmalade",
+    "art_url": "https://i.scdn.co/image/ab67616d00001e023265458c5b7bc115c5054c96",
+    "spot_url": "https://open.spotify.com/track/0PSZ9G584Ve27GK6ThlY6P",
+    "duration": 267960,
+    "rating": 66,
+    "user_id": 1
+  },
+  {
+    "title": "Hey Jude - Remastered 2015",
+    "albums": "1 (Remastered)",
+    "art_url": "https://i.scdn.co/image/ab67616d00001e02582d56ce20fe0146ffa0e5cf",
+    "spot_url": "https://open.spotify.com/track/0aym2LBJBk9DAYuHHutrIl",
+    "duration": 425653,
+    "rating": 75,
+    "user_id": 1
+  }
+]

@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tailwindcss -i ./input.css -o ./public/css/main.css",
     "watch": "tailwindcss -i ./input.css -o ./public/css/main.css --watch",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "keywords": [],
   "author": "",
