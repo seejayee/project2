@@ -4,6 +4,7 @@ const newFavHandler = async (event) => {
 
   const title = document.querySelector('#media-title').value.trim();
 
+  // This should save a new media file to a profile
   if (title) {
     const response = await fetch(`/api/media`, {
       method: 'POST',
