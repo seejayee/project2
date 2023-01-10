@@ -18,19 +18,19 @@ router.get('/', async (req, res) => {
       ],
     });
 
-router.get('/songs/:title', withAuth, async (req, res) => {
-  spotifyApi.searchTracks(req.params.title).then(
-    function (data) {
-      res.render('searchResults', {
-        data,
-      });
-      return;
-    },
-    function (err) {
-      console.error(err);
-    }
-  );
-});
+    router.get('/songs/:title', withAuth, async (req, res) => {
+      spotifyApi.searchTracks(req.params.title).then(
+        function (data) {
+          res.render('searchResults', {
+            data,
+          });
+          return;
+        },
+        function (err) {
+          console.error(err);
+        }
+      );
+    });
 
     // console.log("\n\n", withToken._credentials, "\n\n");
     router.get('/profile', withAuth, async (req, res) => {
@@ -43,9 +43,7 @@ router.get('/songs/:title', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        console.log("\n\n user data is",user,"\n");
-
-
+        console.log('\n\n user data is', user, '\n');
 
         res.render('profile', {
           ...user,
