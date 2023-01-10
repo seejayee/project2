@@ -3,23 +3,26 @@
     <div class="h-full overflow-scroll grid grid-cols-2 mdlrg:grid-cols-4 gap-4">
         {{#each data.body.tracks.items as |item|}}
         <div class="border-4 p-1 border-stone-700 bg-stone-900 h-80 rounded">
-            <button class="text-white save-favorite">Save Favorite</button>
             {{!-- <a href="{{item.external_urls.spotify}}"> --}}
                 <div class="h-44 bg-cover" style="background-image: url({{item.album.images.[1].url}})"></div>
-                <div class="h-32 pt-3 leading-5 overflow-x-auto text-white">
+                <button class="text-white save-favorite">Save as Favorite</button>
+                <div class="h-28 pt-3 leading-5 overflow-x-auto text-white">
                     <p>
-                        {{!-- <a href="{{item.external_urls.spotify}}"> --}}
+                        <a href="{{item.external_urls.spotify}}">
                             {{item.name}}
-                            {{!-- </a> --}}
-                        </p>
+                        </a>
+                    </p>
                     <p>{{item.album.name}}</p>
                     <p>{{item.duration_ms}}</p>
                     <p>{{item.popularity}}</p>
-                    {{#each item.artists as |artist|}}
-                    <ul>--{{artist.name}}</ul>
-                    {{/each}}
+                    <a>
+                        {{#each item.artists as |artist|}}
+                        <ul>--{{artist.name}}</ul>
+                        {{/each}}
+                    </a>
                 </div>
-            {{!-- </a> --}}
+                {{!--
+            </a> --}}
         </div>
         {{/each}}
     </div>

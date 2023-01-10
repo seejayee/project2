@@ -18,6 +18,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Bugs](#bugs)
 - [License](#license)
 - [Contributing](#contributing)
 - [Questions](#questions)
@@ -99,6 +100,10 @@ Utilizing the search bar at the top, you can search for any song by title (in th
 ![searchResults](./assets/searchResults.png)
 
 Selecting "Save Favorite" should move the selected song into your account list. And the song in your account list should have links to the song on Spotify.
+
+## Bugs
+
+- "Delete from Favorites" currently does not work.
 
 ## License
 
