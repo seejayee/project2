@@ -1,15 +1,17 @@
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title>Mixtape Generator</title>
+    <link rel="stylesheet" href="./public/css/main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="description" content="" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <title>Mixtape Generator</title>
-  <link rel="stylesheet" href="./public/css/main.css" />
-</head>
-
-<body class="bg-stone-900">
-  <nav
+  <body class="bg-stone-900">
+    <nav
       class="relative bg-gradient-to-r from-emerald-900 via-stone-900 to-stone-900 p-6"
     >
       <div class="items-center flex justify-between">
@@ -33,7 +35,6 @@
           <div
             class="hidden mdlrg:flex items-center font-mono text-stone-400 space-x-4"
           >
-            
             <a href="#" class="active:text-stone-600 hover:text-white"
               >Favorites</a
             >
@@ -58,14 +59,13 @@
           id="menu"
           class="absolute hidden flex flex-col items-center self-end py-8 mt-6 text-white space-y-6 font-bold bg-stone-600 sm:w-auto sm:self-center left-6 right-6 drop-shadow-m"
         >
-          
           <a href="#">Favorites</a>
           <a href="#">Sign Up/Login</a>
         </div>
       </div>
     </nav>
     <main class="container min-h-128 mx-auto p-6 mb-3">
-      <h1 class="text-stone-200 mb-1 text-2xl">Library</h1>
+      <h1 class="text-stone-200 mb-1 text-2xl">Favorites</h1>
       <div
         class="h-full overflow-scroll grid grid-cols-2 mdlrg:grid-cols-4 gap-4"
       >
@@ -76,7 +76,7 @@
               style="background-image: url(./master_cover.jpg)"
             ></div>
             <div class="h-32 pt-3 leading-5 overflow-x-auto text-white">
-              <p>test1</p>
+              <p></p>
               <p>test2</p>
               <p>test3</p>
               <p>test4</p>
@@ -100,7 +100,7 @@
         <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
       </div>
     </main>
-  <footer
+    <footer
       class="h-96 mdlrg:h-64 text-white bg-gradient-to-b from-emerald-900 via-stone-900 to-stone-900"
     >
       <div
@@ -120,6 +120,5 @@
       </div>
     </footer>
     <script src="./functionality.js"></script>
-</body>
-
+  </body>
 </html>
