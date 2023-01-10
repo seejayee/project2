@@ -622,6 +622,10 @@ video {
   height: 50%;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -880,6 +884,10 @@ video {
 
 .leading-6 {
   line-height: 1.5rem;
+}
+
+.leading-4 {
+  line-height: 1rem;
 }
 
 .tracking-wider {
