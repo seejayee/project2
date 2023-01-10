@@ -2,7 +2,7 @@ const newFavHandler = async (event) => {
   console.log("newFavhandler called");
   event.preventDefault();
 
-  const title = document.querySelector('#media-title').value.trim();
+  const title = document.querySelector('.media-title').innerText;
 
   if (title) {
     const response = await fetch(`/api/media`, {
@@ -41,6 +41,6 @@ document
   .querySelector('.new-media-fav')
   .addEventListener('submit', newFavHandler);
 
-document
-  .querySelector('.media-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.media-list')
+//   .addEventListener('click', delButtonHandler);
