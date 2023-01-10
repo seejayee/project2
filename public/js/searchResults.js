@@ -1,25 +1,27 @@
 const newFavHandler = async (event) => {
   console.log('newFavhandler called');
   event.preventDefault();
+  console.log(event);
+  console.log(event.target)
 
-  const title = document.querySelector('.media-title').innerText;
+  // const title = document.querySelector('.media-title').innerText;
 
-  // This should save a new media file to a profile
-  if (title) {
-    const response = await fetch(`/api/media`, {
-      method: 'POST',
-      body: JSON.stringify({ title }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  // // This should save a new media file to a profile
+  // if (title) {
+  //   const response = await fetch(`/api/media`, {
+  //     method: 'POST',
+  //     body: JSON.stringify({ title }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to add media to favorites');
-    }
-  }
+  //   if (response.ok) {
+  //     document.location.replace('/profile');
+  //   } else {
+  //     alert('Failed to add media to favorites');
+  //   }
+  // }
 };
 
 const delButtonHandler = async (event) => {
@@ -38,9 +40,13 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// document
+//   .querySelector('.new-media-fav')
+//   .addEventListener('submit', newFavHandler);
+
 document
-  .querySelector('.new-media-fav')
-  .addEventListener('submit', newFavHandler);
+  .querySelector('.save-favorite')
+  .addEventListener('click', newFavHandler);
 
 // document
 //   .querySelector('.media-list')
