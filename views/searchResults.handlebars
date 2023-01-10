@@ -1,20 +1,24 @@
 <main class="container h-128 mx-auto p-6 mb-3 border-2 border-red-300">
     <h1 class="text-stone-200 text-2xl">Search Results</h1>
-    <div class="flex h-96 border-2 border-white">
-        {{#each data.body.tracks.items as |item|}}
-        <div class="h-full grow border-2 p-6 text-white border-white">
-            <p class="media-title">Track Name: <a href="{{item.external_urls.spotify}}">{{item.name}}</a></p>
-            <p>Album name: {{item.album.name}}</p>
-            <p>Duration in milliseconds: {{item.duration_ms}}</p>
-            <p>Popularity rating: {{item.popularity}}</p>
-            {{#each item.artists as |artist|}}
-            <ul>--{{artist.name}}</ul>
-            {{/each}}
-            <button class="btn btn-sm" data-id="{{item.id}}">Save to my Favorites</button>
+
+    <div class="grid grid-cols-4 h-full border-2 border-red-300">
+        <div class="w-60 h-64 border-2 border-red-300 text-white">{{#each data.body.tracks.items as |item|}}
+            <form class="form new-media-fav">
+                <ul class="media-title">Track Name: {{item.name}}</ul>
+                <ul>Album artwork URL: {{item.album.images.[1].url}}</ul>
+                <ul>Spotify URL: <a href="{{item.external_urls.spotify}}">{{item.external_urls.spotify}}</a></ul>
+                <ul>Duration in milliseconds: {{item.duration_ms}}</ul>
+                <ul>Popularity rating: {{item.popularity}}</ul>
+                <p>Artists:</p>
+                {{#each item.artists as |artist|}}
+                <ul>--{{artist.name}}</ul>
+                {{/each}}
+                <button class="btn btn-sm" data-id="{{item.id}}">Save to my Favorites</button>
+                <p>------</p>
+                {{/each}}
+            </form>
+            <script src="/js/searchResults.js"></script>
         </div>
-        <div class="h-full grow bg-cover border-2 text-white border-white"
-            style="background-image: url({{item.album.images.[1].url}})"></div>
     </div>
-    {{/each}}
     <div class="flex h-96 border-2 border-white"></div>
 </main>
