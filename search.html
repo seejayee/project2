@@ -14,13 +14,15 @@
       class="relative bg-gradient-to-r from-emerald-900 via-stone-900 to-stone-900 p-6"
     >
       <div class="items-center flex justify-between">
-        <h1 class="text-2xl tracking-wider text-white">Mixtape Generator</h1>
+        <h1 class="text-xl mdlrg:text-2xl tracking-wider text-white">
+          Mixtape Generator
+        </h1>
         <div class="flex items-center">
-          <div class="hidden mdlrg:flex">
+          <div class="">
             <input
               id=""
               type="text"
-              class="rounded-l-2xl pl-3"
+              class="rounded-l-2xl w-32 mdlrg:w-44 pl-3"
               placeholder="Search"
             />
             <input
@@ -30,56 +32,92 @@
             />
           </div>
           <div
-            class="hidden mdlrg:flex items-center font-mono text-white space-x-4"
+            class="hidden mdlrg:flex items-center font-mono text-stone-400 space-x-4"
           >
-            <a href="#" class="active:text-stone-600">About</a>
-            <a href="#" class="active:text-stone-600">Favorites</a>
+            <a href="#" class="active:text-stone-600 hover:text-white"
+              >Favorites</a
+            >
             <a
               href="#"
-              class="hover:bg-emerald-700 active:bg-emerald-900 px-5 py-2 bg-emerald-900 rounded-full"
+              class="text-emerald-700 hover:bg-emerald-700 hover:text-white drop-shadow-button text-shadow-sm rounded border-2 py-1 px-4 border-emerald-700"
               >Sign Up/Login</a
             >
           </div>
         </div>
+        <button
+          id="menu-btn"
+          class="block hamburger mdlrg:hidden focus:outline-none"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <div class="mdlrg:hidden">
+        <div
+          id="menu"
+          class="absolute hidden flex flex-col items-center self-end py-8 mt-6 text-white space-y-6 font-bold bg-stone-600 sm:w-auto sm:self-center left-6 right-6 drop-shadow-m"
+        >
+          <a href="#">Favorites</a>
+          <a href="#">Sign Up/Login</a>
+        </div>
       </div>
     </nav>
-    <main class="container text-white h-96 mx-auto p-6 mb-3">
-      <form class="form login-form">
-        <div class="form-group">
-          <label for="email-login">email:</label>
-          <input class="form-input" type="text" id="email-login" />
+    <main class="container min-h-128 mx-auto p-6 mb-3">
+      <h1 class="text-stone-200 mb-1 text-2xl">Library</h1>
+      <div
+        class="h-full overflow-scroll grid grid-cols-2 mdlrg:grid-cols-4 gap-4"
+      >
+        <div class="border-4 p-1 border-stone-700 bg-stone-900 h-80 rounded">
+          <a href="#"
+            ><div
+              class="h-44 bg-cover"
+              style="background-image: url(./master_cover.jpg)"
+            ></div>
+            <div class="h-32 pt-3 leading-5 overflow-x-auto text-white">
+              <p>test1</p>
+              <p>test2</p>
+              <p>test3</p>
+              <p>test4</p>
+            </div></a
+          >
         </div>
-        <div class="form-group">
-          <label for="password-login">password:</label>
-          <input class="form-input" type="password" id="password-login" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary" type="submit">login</button>
-        </div>
-      </form>
-      <div class="col-md-6">
-        <h2 class="text-2xl">Signup</h2>
-        <form class="form signup-form">
-          <div class="form-group">
-            <label for="name-signup">name:</label>
-            <input class="form-input" type="text" id="name-signup" />
-          </div>
-          <div class="form-group">
-            <label for="email-signup">email:</label>
-            <input class="form-input" type="text" id="email-signup" />
-          </div>
-          <div class="form-group">
-            <label for="password-signup">password:</label>
-            <input class="form-input" type="password" id="password-signup" />
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary" type="submit">signup</button>
-          </div>
-        </form>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
+        <div class="border-4 border-stone-700 bg-stone-900 h-80 rounded"></div>
       </div>
     </main>
     <footer
-      class="h-48 bg-gradient-to-b from-emerald-900 via-stone-900 to-stone-900"
-    ></footer>
+      class="h-96 mdlrg:h-64 text-white bg-gradient-to-b from-emerald-900 via-stone-900 to-stone-900"
+    >
+      <div
+        class="container text-center leading-9 mx-auto mdlrg:flex justify-around"
+      >
+        <div class="pt-5 mb-9">
+          <p class="">Mixtape Generator</p>
+          <p>Copyright 2023</p>
+        </div>
+        <div class="mdlrg:pt-5">
+          <h2 class="text-4xl">Contact</h2>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+        </div>
+      </div>
+    </footer>
+    <script src="./functionality.js"></script>
   </body>
 </html>
