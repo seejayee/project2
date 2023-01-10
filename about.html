@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="description" content="" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <title>Mixtape Generator</title>
-  <link rel="stylesheet" href="../css/main.css" />
+  <title>About Page</title>
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body class="bg-stone-900">
@@ -13,7 +13,6 @@
     <div class="items-center flex justify-between">
       <h1 class="text-2xl tracking-wider text-white">Mixtape Generator</h1>
       <div class="flex items-center">
-        {{#if logged_in}}
         <div class="hidden mdlrg:flex">
           <input id="" type="text" class="rounded-l-2xl pl-3" placeholder="Search" />
           <input type="submit" value="submit"
@@ -22,22 +21,19 @@
         <div class="hidden mdlrg:flex items-center font-mono text-white space-x-4">
           <a href="#" class="active:text-stone-600">About</a>
           <a href="#" class="active:text-stone-600">Favorites</a>
-
-          <a href="/profile">Profile</a> |
-          <button class="no-button" id="logout">Logout</button>
-          {{else}}
-          <a href="/login"
-            class="hover:bg-emerald-700 active:bg-emerald-900 px-5 py-2 bg-emerald-900 rounded-full">login</a>
-          {{/if}}
+          <a href="#" class="hover:bg-emerald-700 active:bg-emerald-900 px-5 py-2 bg-emerald-900 rounded-full">Sign
+            Up/Login</a>
         </div>
       </div>
     </div>
-    {{{ body }}}
   </nav>
-  <footer class="h-48 bg-gradient-to-b from-emerald-900 via-stone-900 to-stone-900"></footer>
-  {{#if logged_in}}
-  <script src="./js/logout.js"></script>
-  {{/if}}
+  <main class="container h-128 mx-auto p-6 mb-3">
+    <div class="h-4 border-2 border-red-300">
+      <h2 class="flex rounded items-center border-white border-2 font-mono text-stone-200 text-2xl p-6 ">About</h2>
+      <p class="text-stone-200 text-2xl p-6 ">Welcome! This is a site called "Mixtape Generator." <br><br> Made by Ben, Christian, Darren, and Ghazala. <br><br> The purpose of this website is to be able to search for different songs and be able to compile them into a list of your favorites. This website utilizes the data within the Spotify API to find the songs that you're looking for.</p>
+    </div>
+  </main>
+
 </body>
 
 </html>
