@@ -20,7 +20,7 @@
   </div>
 
   {{#if media.length}}
-  <div class="col-md-6 media-list">
+  <div class="col-md-6">
 
 
     {{#each media as |media|}}
@@ -29,7 +29,7 @@
         <h4><a href="/media/{{media.id}}">{{media.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{media.id}}">DELETE</button>
+        <button class="media-list btn btn-sm btn-danger" data-id="{{media.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -37,4 +37,4 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="/js/profile.js"></script>
