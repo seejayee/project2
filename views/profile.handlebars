@@ -1,40 +1,28 @@
-<div class="row">
+<div class="row text-white">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
+{{#if media.length}}
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Mixtape generator:</h3>
-
-    <form class="form new-media-form">
-      <div class="form-group">
-        <label for="media-title">media title:</label>
-        <input class="form-input" type="text" id="media-title" name="media-title" />
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Search</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if media.length}}
-  <div class="col-md-6">
-
-
+<main class="container min-h-128 mx-auto p-6 mb-3">
+  <h1 class="text-stone-200 mb-1 text-2xl">Favorites</h1>
+  <div class="h-full overflow-scroll grid grid-cols-2 mdlrg:grid-cols-4 gap-4">
     {{#each media as |media|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/media/{{media.id}}">{{media.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="media-list btn btn-sm btn-danger" data-id="{{media.id}}">DELETE</button>
-      </div>
+    <div class="border-4 p-1 border-stone-700 bg-stone-900 h-80 rounded">
+      <a href="media/{{media.id}}">
+        <div class="h-44 bg-cover" style="background-image: url({{media.art_url}})"></div>
+        <div class="h-32 pt-3 leading-5 overflow-x-auto text-white">
+          <p><a href="{{media.spot_url}}">{{media.title}}</a></p>
+          <p>{{media.albums}}</p>
+          <p>{{media.duration}}</p>
+          <p>{{media.rating}}</p>
+        </div>
+      </a>
     </div>
     {{/each}}
   </div>
-  {{/if}}
-</div>
+</main>
+{{/if}}
 
 <script src="/js/profile.js"></script>

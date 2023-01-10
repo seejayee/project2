@@ -1,7 +1,9 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('.media-title').value.trim();
+  const title = document.querySelector('#media-title').value;
+
+  console.log(title);
 
   // GET method to try to get a search function for Spotify music in the homeRoutes.js file
   if (title) {

@@ -17,8 +17,8 @@ const seedDatabase = async () => {
     fields: [
       `title`,
       'albums',
-      'artURL',
-      'spotURL',
+      'art_url',
+      'spot_url',
       'duration',
       'rating',
       'user_id',
