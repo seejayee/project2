@@ -1,5 +1,5 @@
 const User = require('./User');
-const Media = require('./Media');
+const Media = require('./media');
 const Artist = require('./Artist');
 
 User.hasMany(Media, {
