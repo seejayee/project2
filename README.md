@@ -101,6 +101,8 @@ Utilizing the search bar at the top, you can search for any song by title (in th
 
 Selecting "Save Favorite" should move the selected song into your account list. And the song in your account list should have links to the song on Spotify.
 
+To get full control of this application, you will need to navigate to [Spotify for Developers](https://developer.spotify.com/dashboard/), login or create an account, and then "Create an App". With an app now created, you should be able to get a Client ID and a Client Secret from Spotify. If you navigate to utils/spotToken.js in the application files, you should be able to replace the listed Client ID and Client Secret with the ones you just got from Spotify.
+
 ## Bugs
 
 - "Delete from Favorites" currently does not work.
